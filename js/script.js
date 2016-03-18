@@ -20,9 +20,9 @@ $(function() {
 
       event.preventDefault();
 
-      if ($(email) == '') {
+      if ($(email) == " ") {
         alert('Please enter a valid email address.');
-      } else if (validateEmail(email) === re) {
+      } else if (validateEmail(email) == re) {
         alert('Thanks for subscribing!');
       } else {
         alert('Something has gone wrong. Please try again later.');
@@ -30,15 +30,14 @@ $(function() {
     });
 
   });
-// Function that validates email address through a regular expression.
+  // Function that validates email address through a regular expression.
 
-function validateEmail(email) {
+  function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-}
+  }
 
-  //SMOOTH SCROLLING http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
-
+  // SMOOTH SCROLLING http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
   $(function() {
 
     $('a[href^="#"]').on('click', function(event) {
@@ -48,7 +47,7 @@ function validateEmail(email) {
       var $target = $(target);
 
       $('html, body').stop().animate({
-        'scrollTop': $target.offset().top
+        'scrollTop': $target.offset().top - 93
       }, 900, 'swing', function() {
         window.location.hash = target;
       });
